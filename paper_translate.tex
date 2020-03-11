@@ -3,7 +3,7 @@
 %---------------------------------------------------------------------------%
 %->> Document settings
 %---------------------------------------------------------------------------%
-\usepackage[authoryear,geometry,xhf,list]{Style/artratex}% document settings
+\usepackage[authoryear,geometry,list]{Style/artratex}% document settings
 %- usage: \usepackage[option1,option2,...,optionN]{artratex}
 %- Multiple optional arguments:
 %- [bibtex|biber]% set bibliography processor and package
@@ -37,7 +37,8 @@
 
 \clearpage
 
-\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{noheaderstyle}
 
 \input{Tex/translate}
 

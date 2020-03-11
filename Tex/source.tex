@@ -95,7 +95,7 @@ Depthwise separable convolutions are defined by two separate layers: light weigh
 spatial filtering and heavier 1x1 pointwise convolutions for feature generation.
 
 MobileNetV2 [39] introduced the linear bottleneck and inverted residual structure in order to make even more efficient
-layer structures by leveraging the low rank nature of the problem. This structure is shown on Figure 3 and is
+layer structures by leveraging the low rank nature of the problem. This structure is shown on Figure \ref{fig:src_fig3} and is
 defined by a 1x1 expansion convolution followed by depthwise convolutions and a 1x1 projection layer. The input and
 output are connected with a residual connection if and only if they have the same number of channels. This structure
 maintains a compact representation at the input and the output while expanding to a higher-dimensional feature space
@@ -104,7 +104,7 @@ internally to increase the expressiveness of nonlinear perchannel transformation
 MnasNet [43] built upon the MobileNetV2 structure by introducing lightweight attention modules based on squeeze
 and excitation into the bottleneck structure. Note that the squeeze and excitation module are integrated in a different
 location than ResNet based modules proposed in [20]. The module is placed after the depthwise filters in the expansion
-in order for attention to be applied on the largest representation as shown on Figure 4.
+in order for attention to be applied on the largest representation as shown on Figure ~\ref{fig:src_fig4}.
 
 For MobileNetV3, we use a combination of these layers as building blocks in order to build the most effective models.
 Layers are also upgraded with modified swish nonlinearities [36, 13, 16]. Both squeeze and excitation as well as
@@ -114,9 +114,10 @@ in fixed point arithmetic so we replace this with the hard sigmoid [2, 11] as di
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=5in]{Figure3.png}
-    \caption{MobileNetV2 [39] layer (Inverted Residual and LinearBottleneck). Each block consists of narrow input and output (bottleneck),
+    \caption{MobileNetV2 layer (Inverted Residual and LinearBottleneck). Each block consists of narrow input and output (bottleneck),
     which don’t have nonlinearity, followed by expansion to a much higher-dimensional space and projection to the output. The
     residual connects bottleneck (rather than expansion).}
+    \label{fig:src_fig3}
 \end{figure}
 
 
@@ -125,4 +126,7 @@ in fixed point arithmetic so we replace this with the hard sigmoid [2, 11] as di
     \includegraphics[width=5in]{Figure4.png}
     \caption{MobileNetV2 + Squeeze-and-Excite [20]. In contrast with [20] we apply the squeeze and excite in the residual layer.
     We use different nonlinearity depending on the layer, see section 5.2 for details.}
+    \label{fig:src_fig4}
 \end{figure}
+
+% 
